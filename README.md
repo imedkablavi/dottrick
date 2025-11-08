@@ -31,8 +31,7 @@
 ```
 
 ## 🚀 Live Demo
-- Netlify: https://dottrick.imedkablavi.info/
-- GitHub Pages (optional): https://<your-username>.github.io/dottrick/
+-: https://dottrick.imedkablavi.info/
 
 ---
 

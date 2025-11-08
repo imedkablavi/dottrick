@@ -1,0 +1,116 @@
+
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DotTrick — Gmail Dot Trick Generator | مولد نقاط Gmail</title>
+  <meta name="description" content="DotTrick — أداة مجانية لتوليد كل الصيغ الممكنة لاسم مستخدم Gmail باستخدام النقاط قبل @gmail.com مع دعم العربية والإنجليزية." />
+  <meta name="keywords" content="Gmail dot trick, توليد ايميلات, Gmail aliases, generator, dots" />
+  <meta name="author" content="Your Name" />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://dottrick.imedkablavi.info/" />
+  <link rel="alternate" hreflang="ar" href="https://dottrick.imedkablavi.info/" />
+  <link rel="alternate" hreflang="en" href="https://dottrick.imedkablavi.info/" />
+  <link rel="alternate" hreflang="tr" href="https://dottrick.imedkablavi.info/" />
+  <link rel="alternate" hreflang="x-default" href="https://dottrick.imedkablavi.info/" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f4f6f8" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0f2027" />
+  <meta name="theme-color" id="theme-color-current" content="#0f2027" />
+  <meta property="og:title" content="DotTrick — Gmail Dot Trick Generator" />
+  <meta property="og:description" content="ولّد جميع التركيبات بالنقاط لاسم مستخدم Gmail خلال ثوانٍ مع DotTrick." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://dottrick.imedkablavi.info/" />
+  <meta property="og:image" content="/assets/og-image.svg" />
+  <meta property="og:locale" content="ar_AR" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="DotTrick — Gmail Dot Trick Generator" />
+  <meta name="twitter:description" content="أداة توليد جميع صيغ Gmail بالنقاط مع دعم عربي/إنجليزي." />
+  <meta name="twitter:image" content="/assets/og-image.svg" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "DotTrick",
+    "applicationCategory": "Utility",
+    "operatingSystem": "Web",
+    "description": "Generate every dotted variant of a Gmail username (Gmail dot trick). Multi-language support.",
+    "url": "https://dottrick.imedkablavi.info/",
+    "author": { "@type": "Person", "name": "Imed Kablavi", "url": "https://www.imedkablavi.info/" }
+  }
+  </script>
+</head>
+<body>
+  <div class="body-overlay" aria-hidden="true"></div>
+  <!-- Header: Brand + Language Switch -->
+  <header class="header container" role="banner">
+    <div class="brand brand--centered reveal-up">
+      <div class="brand__logo" aria-hidden="true">•</div>
+      <h1 class="brand__title" data-i="title">DotTrick — مولد نقاط Gmail</h1>
+      <p class="brand__subtitle" data-i="subtitle">توليد جميع الصيغ المحتملة بوضع النقاط في اسم مستخدم Gmail</p>
+      <div class="lang-switch" role="group" aria-label="تبديل اللغة / Language">
+        <button id="lang-ar" type="button" class="lang-icon active" aria-pressed="true" title="العربية" aria-label="العربية">🇸🇦</button>
+        <button id="lang-en" type="button" class="lang-icon" aria-pressed="false" title="English" aria-label="English">🇬🇧</button>
+        <button id="lang-tr" type="button" class="lang-icon" aria-pressed="false" title="Türkçe" aria-label="Türkçe">🇹🇷</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main: Grid layout (sidebar + content) -->
+  <main class="app-grid reveal-up" role="main">
+    <div class="actions actions-dock" aria-label="أوامر">
+      <button type="button" class="btn" data-i="generate">توليد</button>
+      <button type="button" class="btn btn-outline" data-i="copy">نسخ</button>
+      <button type="button" class="btn btn-outline" data-i="save">حفظ ملف</button>
+      <button type="button" class="btn btn-outline" data-i="clear">مسح</button>
+      <button type="button" class="btn btn-outline" data-i="toggleTheme">الوضع الفاتح/الداكن</button>
+    </div>
+    <section class="card reveal-up" aria-labelledby="tool-title">
+      <div class="card__body">
+        <h2 id="tool-title" class="visually-hidden">Gmail Dot Trick Tool</h2>
+        <!-- Tool Form: Username input + results -->
+        <form class="form" onsubmit="return false" autocomplete="off" novalidate>
+          <div class="input-row">
+            <div class="form-main centered">
+              <label for="username" data-i="labelUsername">اسم المستخدم (بدون @gmail.com)</label>
+              <input type="text" id="username" inputmode="latin" maxlength="30" placeholder="مثال: imed" aria-describedby="usernameHelp" autocomplete="off" />
+              <div id="usernameHelp" class="note" data-i="description">أدخل اسم مستخدم Gmail بدون النطاق وسيتم توليد جميع التركيبات بالنقاط.</div>
+              <div class="meta" id="count" aria-live="polite"></div>
+            </div>
+          </div>
+          <textarea id="output" readonly placeholder="النتائج ستظهر هنا" data-i="outputPlaceholder" aria-label="قائمة البريد الناتجة"></textarea>
+        </form>
+       
+      </div>
+      
+    </section>
+  </main>
+
+  <!-- Footer: full-width -->
+  <footer class="site-footer" role="contentinfo">
+    <p><span id="static-footer">© <span id="year"></span> All rights reserved — <a href="https://www.imedkablavi.info/" target="_blank" rel="noopener">imedkablavi.info</a></span></p>
+  </footer>
+
+  <!-- Floating Help Button -->
+  <button type="button" class="fab-help" id="helpBtn" aria-haspopup="dialog" aria-controls="helpModal" aria-label="Help">?
+  </button>
+
+  <!-- Help Modal: localized content injected by JS -->
+  <div class="modal" id="helpModal" role="dialog" aria-modal="true" aria-labelledby="helpTitle" hidden>
+    <div class="modal__backdrop" data-close="true"></div>
+    <div class="modal__dialog" role="document">
+      <button type="button" class="modal__close" id="helpClose" aria-label="Close">✕</button>
+      <h2 id="helpTitle" data-i="helpTitle">ما الذي تفعله هذه الأداة؟</h2>
+      <div class="modal__content" data-i="helpContent">
+      
+      </div>
+    </div>
+  </div>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="assets/js/app.js" defer></script>
+</body>
+</html>

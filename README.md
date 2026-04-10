@@ -31,7 +31,7 @@
 ```
 
 ## 🚀 Live Demo
--: https://dottrick.imedkablavi.info/
+-: [https://dottrick.imedkablavi.info](https://imedkablavi.github.io/dottrick/)/
 
 ---
 
